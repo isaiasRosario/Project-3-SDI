@@ -9,6 +9,6 @@ var shooterNames= {
 		{
 			"shooterName": "Smooth Shot"
 		}
-	];
+	]
 	
 };
