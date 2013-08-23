@@ -43,14 +43,14 @@ var isSafetyOn = function (safety){
 
 	if(safety === true){
 		if(shootGun.selectGun.pistol === "Pistol"){
-			console.log("The safety is on for this " + shootGun.selectGun.pistol +
-						" let turn it off and start shooting");
+			console.log("The safety is on for the " + shootGun.selectGun.pistol +
+						" lets turn it off and start shooting.");
 		} else {
-			console.log("This is not a " + shootGun.selectGun.pistol);
+			console.log("This is not a " + shootGun.selectGun.pistol + ".");
 		};
 	} else {
 		console.log("The safety is off on this " + shootGun.selectGun.pistol +
-					" lets start shooting");
+					" lets start shooting.");
 	};
 
 };
@@ -58,14 +58,23 @@ var isSafetyOn = function (safety){
 // String Function
 var shooterGunUsed = function(shooter1, shooter2){
 	console.log(shooter1 + " and " + shooter2 + " both chose a " +
-				shootGun.selectGun.pistol);
+				shootGun.selectGun.pistol + " to shoot with." );
 				
 	return shooter1;
 }; 
 
+// Boolean Function
+var monsterChase = function(tof){
+	console.log("Is it really " + tof + " that a " + monster + " is chasing us!");
+	
+	return tof;
+};
+
 // Main Code
 
-console.log("Ahh there is a " + monster +
+var isMonsterChase = monsterChase(true);
+ 
+console.log("Ahh its " + isMonsterChase + " there is a " + monster +
 			" out here lets find a gun to protect ourselves!");
 
 var shooterName = shooterGunUsed(shooterNames.shooters[0].shooterName,
@@ -74,7 +83,7 @@ var shooterName = shooterGunUsed(shooterNames.shooters[0].shooterName,
 isSafetyOn(shootGun.safety);
 
 console.log(shooterName + " noticed that the " + shootGun.selectGun.pistol +
-			" has a total power boost of " + shootGun.gunPower());
+			" has a total power boost of " + shootGun.gunPower() + ".");
 
 // Finish
 
