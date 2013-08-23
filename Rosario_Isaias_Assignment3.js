@@ -5,7 +5,7 @@
 // SDI Project 3
 // Code to Flowchart
 
-// Start
+// Start // 
 
 // Global Variables
 var monster = "Big Blue Monster",
@@ -95,28 +95,42 @@ var gunChoices = function (obj){
 	return obj;
 };
 
-// Main Code
+// Shoot Monster Function
+var shootMonster = function (){
+	while(monsterHealth > 15){
+		monsterHealth = monsterHealth - 5;
+		console.log("We shot the " + monster + " it has " + monsterHealth +
+		" health left keep shooting.");
+	};
+};
 
-var isMonsterChase = monsterChase(true); // returns boolean value
+
+// Main Code //
+
+isMonsterChase = monsterChase(true); // returns boolean value
  
 console.log("Ahh its " + isMonsterChase + " there is a " + monster +
 			" out here lets find a gun to protect ourselves!");
 
-var allGuns = gunChoices(shootGun.selectGun) // return object value
+allGuns = gunChoices(shootGun.selectGun); // returns object value
 
-var shooterName = shooterGunUsed(shooterNames.shooters[0].shooterName,
+shooterName = shooterGunUsed(shooterNames.shooters[0].shooterName,
 				shooterNames.shooters[1].shooterName); // returns string value
 
 isSafetyOn(shootGun.safety);
 
 console.log("Where can we hide?");
 
-var weHide = hideOptions(hideArr); // returns array value
+weHide = hideOptions(hideArr); // returns array value
 
-console.log
+console.log("Ok we found a good cover spot now lets kill this monster.");
+
+shootMonster();
 
 console.log(shooterName + " noticed that the " + shootGun.selectGun.pistol +
 			" has a total power boost of " + shootGun.gunPower() + ".");
+			
+console.log("He took the last shot with he power boost and killed the " + monster + "!");
 
-// Finish
+// Finish //
 
