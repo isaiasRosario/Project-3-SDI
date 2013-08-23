@@ -9,7 +9,7 @@
 
 // Global Variables
 var monster = "Big Blue Monster",
-	monsterPower = 100
+	monsterHealth = 100
 ;
 	
 
@@ -25,7 +25,7 @@ var shootGun = {
 	}, // end guns object 
 	"gunPower": function(){
 	
-		var gunShotPower = this.power[0]+this.powerBoost;
+		var gunShotPower = this.power[0] + this.powerBoost;
 		
 		return gunShotPower;
 	
@@ -38,31 +38,43 @@ var shootGun = {
 	
 }; // end shootGun Object
 
-// Procedure
-
+// Safety on Procedure
 var isSafetyOn = function (safety){
 
 	if(safety === true){
 		if(shootGun.selectGun.pistol === "Pistol"){
-			console.log("The safety is on for this " + shootGun.selectGun.pistol);
+			console.log("The safety is on for this " + shootGun.selectGun.pistol +
+						" let turn it off and start shooting");
 		} else {
 			console.log("This is not a " + shootGun.selectGun.pistol);
 		};
 	} else {
-		console.log("The safety is off on this " + shootGun.selectGun.pistol);
+		console.log("The safety is off on this " + shootGun.selectGun.pistol +
+					" lets start shooting");
 	};
 
 };
 
-// Functions
+// String Function
+var shooterGunUsed = function(shooter1, shooter2){
+	console.log(shooter1 + " and " + shooter2 + " both chose a " +
+				shootGun.selectGun.pistol);
+				
+	return shooter1;
+}; 
 
 // Main Code
 
+console.log("Ahh there is a " + monster +
+			" out here lets find a gun to protect ourselves!");
+
+var shooterName = shooterGunUsed(shooterNames.shooters[0].shooterName,
+				shooterNames.shooters[1].shooterName); // returns string
+
 isSafetyOn(shootGun.safety);
 
-// Console Log Output
-console.log("The " + shootGun.selectGun.pistol + " has a total power boost of " + shootGun.gunPower());
-console.log(shooterNames.shooters[0].shooterName + " " + shootGun.safety);
+console.log(shooterName + " noticed that the " + shootGun.selectGun.pistol +
+			" has a total power boost of " + shootGun.gunPower());
 
 // Finish
 
