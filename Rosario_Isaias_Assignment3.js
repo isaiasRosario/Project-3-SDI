@@ -10,7 +10,6 @@
 // Global Variables
 var monster = "Big Blue Monster",
 	monsterPower = 100
-	gunUsed = shootGun.selectGun.pistol
 ;
 	
 
@@ -39,10 +38,19 @@ var shootGun = {
 	
 }; // end shootGun Object
 
-
 // Procedure
 
-var pro = function (){
+var isSafetyOn = function (safety){
+
+	if(safety === true){
+		if(shootGun.selectGun.pistol === "Pistol"){
+			console.log("The safety is on for this " + shootGun.selectGun.pistol);
+		} else {
+			console.log("This is not a " + shootGun.selectGun.pistol);
+		};
+	} else {
+		console.log("The safety is off on this " + shootGun.selectGun.pistol);
+	};
 
 };
 
@@ -50,11 +58,11 @@ var pro = function (){
 
 // Main Code
 
-
+isSafetyOn(shootGun.safety);
 
 // Console Log Output
-console.log("The " + gunUsed + " has a total power boost of " + shootGun.gunPower());
-console.log(shooterNames.shooters[0].shooterName);
+console.log("The " + shootGun.selectGun.pistol + " has a total power boost of " + shootGun.gunPower());
+console.log(shooterNames.shooters[0].shooterName + " " + shootGun.safety);
 
 // Finish
 
