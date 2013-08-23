@@ -53,7 +53,7 @@ var pro = function (){
 
 
 // Console Log Output
-console.log("The " + shootGun.selectGun.pistol + " has a total power boost of " + shootGun.gunPower());
+console.log("The " + gunUsed + " has a total power boost of " + shootGun.gunPower());
 console.log(shooterNames.shooters[0].shooterName);
 
 // Finish
